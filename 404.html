@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script>
+      // GitHub Pages doesn't support client-side routing by default
+      // This 404.html file redirects all 404s to index.html for SPA routing
+      // Single Page Apps (SPA) need this to handle client-side routing
+      
+      // Get the current path and preserve query string and hash
+      var path = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      
+      // Base path - adjust if your site is in a subdirectory (e.g., '/repo-name')
+      var basePath = '';
+      
+      // Redirect to index.html with the original path
+      // React Router will handle the routing from there
+      var redirectPath = basePath + '/index.html' + path + search + hash;
+      window.location.replace(redirectPath);
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
