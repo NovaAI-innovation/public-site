@@ -1,0 +1,45 @@
+.virtualizedGrid {
+  width: 100%;
+  position: relative;
+  /* Optimize for smooth scrolling */
+  will-change: transform;
+  contain: layout style paint;
+}
+
+.gridContent {
+  display: grid;
+  gap: var(--spacing-lg, 16px);
+  width: 100%;
+
+  /* Mobile: 1 column (320px - 767px) */
+  grid-template-columns: 1fr;
+
+  /* Tablet: 2 columns (768px - 1023px) */
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl, 20px);
+  }
+
+  /* Desktop: 3 columns (1024px - 1279px) */
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl, 20px);
+  }
+
+  /* Large Desktop: 4 columns (1280px+) */
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xxl, 24px);
+  }
+}
+
+.emptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: var(--spacing-lg, 32px);
+  color: var(--color-text-secondary, #6c757d);
+  font-size: var(--font-size-md, 16px);
+  text-align: center;
+}

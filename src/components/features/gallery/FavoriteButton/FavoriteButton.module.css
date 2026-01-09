@@ -1,0 +1,98 @@
+.favoriteButton {
+  position: absolute;
+  top: var(--spacing-sm, 8px);
+  right: var(--spacing-sm, 8px);
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  padding: var(--spacing-xs, 4px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .favoriteButton {
+    transition: none;
+  }
+}
+
+.favoriteButton:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .favoriteButton:hover {
+    transform: none;
+  }
+}
+
+.favoriteButton:focus {
+  outline: 2px solid var(--color-primary, #007bff);
+  outline-offset: 2px;
+}
+
+.favoriteButton svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-text-secondary, #6c757d);
+  transition: color 0.2s ease, fill 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .favoriteButton svg {
+    transition: none;
+  }
+}
+
+.favoriteButton.favorited svg {
+  color: var(--color-error, #dc3545);
+  fill: var(--color-error, #dc3545);
+}
+
+.favoriteButton.small {
+  padding: var(--spacing-xs, 4px);
+}
+
+.favoriteButton.small svg {
+  width: 16px;
+  height: 16px;
+}
+
+.favoriteButton.medium {
+  padding: var(--spacing-sm, 8px);
+}
+
+.favoriteButton.medium svg {
+  width: 20px;
+  height: 20px;
+}
+
+.favoriteButton.large {
+  padding: var(--spacing-md, 12px);
+}
+
+.favoriteButton.large svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

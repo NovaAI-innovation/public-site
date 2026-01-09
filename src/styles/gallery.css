@@ -1,0 +1,87 @@
+/* Gallery Styles */
+
+/* Responsive grid layout */
+.gallery-grid {
+  /* Mobile: 1 column (320px-767px) */
+  grid-template-columns: repeat(1, 1fr);
+}
+
+/* Tablet: 2 columns (768px-1023px) */
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: 3 columns (1024px-1279px) */
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large desktop: 4 columns (1280px+) */
+@media (min-width: 1280px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Gallery image card styles */
+.gallery-image-card {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.gallery-image-card:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Ensure images maintain aspect ratio */
+.gallery-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Loading skeleton animation */
+.gallery-image-skeleton {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-image-skeleton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .gallery-image-card,
+  .gallery-image-skeleton::after {
+    transition: none;
+    animation: none;
+  }
+}

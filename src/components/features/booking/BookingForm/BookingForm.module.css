@@ -1,0 +1,133 @@
+.form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.formGroup {
+  margin-bottom: var(--spacing-lg);
+}
+
+.label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  color: inherit;
+}
+
+.required {
+  color: var(--color-error);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: var(--spacing-md);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-sans);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius-md);
+  background-color: transparent;
+  color: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.input:invalid:not(:focus):not(:placeholder-shown),
+.textarea:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: var(--color-error);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.formActions {
+  margin-top: var(--spacing-xl);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submitButton {
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: white;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submitButton:hover {
+  background-color: #1d4ed8;
+}
+
+.submitButton:active {
+  transform: translateY(1px);
+}
+
+.submitButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.buttonSpinner,
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: var(--spacing-sm);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.message {
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+}
+
+.successMessage {
+  color: var(--color-success);
+  background-color: rgba(5, 150, 105, 0.1);
+  border: 1px solid var(--color-success);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+}
+
+.errorMessage {
+  color: var(--color-error);
+  background-color: rgba(220, 38, 38, 0.1);
+  border: 1px solid var(--color-error);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+}

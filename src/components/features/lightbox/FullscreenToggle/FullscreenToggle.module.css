@@ -1,0 +1,67 @@
+.fullscreenToggle {
+  position: absolute;
+  top: 1rem;
+  right: 4rem; /* Position to left of close button */
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--color-text-light, #ffffff);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  outline: none;
+}
+
+.fullscreenToggle:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.fullscreenToggle:active {
+  transform: scale(0.95);
+}
+
+.fullscreenToggle:focus-visible {
+  outline: 2px solid var(--color-primary, #007bff);
+  outline-offset: 2px;
+}
+
+.fullscreenToggle[aria-pressed="true"] {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  user-select: none;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .fullscreenToggle {
+    transition: none;
+  }
+  
+  .fullscreenToggle:hover {
+    transform: none;
+  }
+  
+  .fullscreenToggle:active {
+    transform: none;
+  }
+}

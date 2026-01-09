@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm test:*)",
+      "Skill(bmad:bmm:workflows:dev-story)"
+    ]
+  }
+}

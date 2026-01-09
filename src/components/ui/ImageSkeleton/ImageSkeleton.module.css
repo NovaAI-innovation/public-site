@@ -1,0 +1,40 @@
+.imageSkeleton {
+  position: relative;
+  width: 100%;
+  background: var(--color-background-secondary, #f8f9fa);
+  border-radius: var(--border-radius-md, 8px);
+  overflow: hidden;
+}
+
+.skeletonContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shimmer {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-background-secondary, #f8f9fa) 25%,
+    var(--color-background-tertiary, #e9ecef) 50%,
+    var(--color-background-secondary, #f8f9fa) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

@@ -1,0 +1,28 @@
+.skipLink {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  z-index: 1000;
+  padding: var(--spacing-sm, 8px) var(--spacing-md, 12px);
+  background: var(--color-primary, #007bff);
+  color: var(--color-text-on-primary, #ffffff);
+  text-decoration: none;
+  font-size: var(--font-size-sm, 14px);
+  font-weight: var(--font-weight-medium, 500);
+  border-radius: var(--border-radius-md, 8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, top 0.2s ease;
+}
+
+.skipLink:focus {
+  top: var(--spacing-md, 12px);
+  opacity: 1;
+  pointer-events: auto;
+  outline: 2px solid var(--color-primary-focus, #007bff);
+  outline-offset: 2px;
+}
+
+.skipLink:hover {
+  background: var(--color-primary-hover, #0056b3);
+}

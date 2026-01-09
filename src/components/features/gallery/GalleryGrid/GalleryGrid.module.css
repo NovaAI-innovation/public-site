@@ -1,0 +1,44 @@
+.galleryGrid {
+  display: grid;
+  gap: var(--spacing-lg, 16px);
+  width: 100%;
+
+  /* Mobile: 1 column (320px - 767px) */
+  grid-template-columns: 1fr;
+
+  /* Tablet: 2 columns (768px - 1023px) */
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl, 20px);
+  }
+
+  /* Desktop: 3 columns (1024px - 1279px) */
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl, 20px);
+  }
+
+  /* Large Desktop: 4 columns (1280px+) */
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xxl, 24px);
+  }
+}
+
+.emptyState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  color: var(--color-text-secondary, #6c757d);
+  font-size: var(--font-size-lg, 18px);
+  text-align: center;
+}
+
+.emptyState p {
+  margin: 0;
+  padding: var(--spacing-lg, 16px);
+  background: var(--color-background-secondary, #f8f9fa);
+  border-radius: var(--border-radius-md, 8px);
+  border: 1px solid var(--color-border-light, #e9ecef);
+}

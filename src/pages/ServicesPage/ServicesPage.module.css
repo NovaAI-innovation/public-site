@@ -1,0 +1,22 @@
+.servicesPage {
+  min-height: 100vh;
+  padding: var(--spacing-lg, 24px);
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: var(--font-size-xxl, 48px);
+  font-weight: var(--font-weight-bold, 700);
+  margin-bottom: var(--spacing-md, 16px);
+  color: var(--color-text-primary, #212529);
+}
+
+.description {
+  font-size: var(--font-size-lg, 18px);
+  color: var(--color-text-secondary, #6c757d);
+  line-height: var(--line-height-relaxed, 1.75);
+}

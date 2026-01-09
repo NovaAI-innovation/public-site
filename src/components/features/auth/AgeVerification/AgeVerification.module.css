@@ -1,0 +1,153 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000; /* Higher than lightbox to ensure age verification shows first */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg, 24px);
+  outline: none; /* Focus managed by buttons, not modal container */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay {
+    animation: none;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  background: var(--color-background, #ffffff);
+  border-radius: var(--border-radius-lg, 12px);
+  padding: var(--spacing-xl, 32px);
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content {
+    animation: none;
+  }
+}
+
+.header {
+  margin-bottom: var(--spacing-xl, 32px);
+  text-align: center;
+}
+
+.title {
+  font-size: var(--font-size-2xl, 28px);
+  font-weight: var(--font-weight-bold, 700);
+  margin: 0 0 var(--spacing-md, 16px) 0;
+  color: var(--color-text-primary, #000000);
+}
+
+.description {
+  font-size: var(--font-size-base, 16px);
+  line-height: var(--line-height-relaxed, 1.6);
+  margin: 0;
+  color: var(--color-text-secondary, #666666);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md, 16px);
+}
+
+.verifyButton,
+.declineButton {
+  width: 100%;
+  padding: var(--spacing-md, 16px) var(--spacing-lg, 24px);
+  font-size: var(--font-size-base, 16px);
+  font-weight: var(--font-weight-semibold, 600);
+  border: none;
+  border-radius: var(--border-radius-md, 8px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.verifyButton {
+  background: var(--color-primary, #007bff);
+  color: var(--color-text-on-primary, #ffffff);
+}
+
+.verifyButton:hover,
+.verifyButton:focus {
+  background: var(--color-primary-hover, #0056b3);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.verifyButton:active {
+  transform: translateY(0);
+}
+
+.declineButton {
+  background: var(--color-secondary, #6c757d);
+  color: var(--color-text-on-secondary, #ffffff);
+}
+
+.declineButton:hover,
+.declineButton:focus {
+  background: var(--color-secondary-hover, #5a6268);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+}
+
+.declineButton:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .content {
+    padding: var(--spacing-lg, 24px);
+    margin: var(--spacing-md, 16px);
+  }
+
+  .title {
+    font-size: var(--font-size-xl, 24px);
+  }
+
+  .description {
+    font-size: var(--font-size-sm, 14px);
+  }
+}
